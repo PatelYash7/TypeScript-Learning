@@ -1,8 +1,10 @@
-function createUser({name,isPaid}:{name:string,isPaid:boolean}){  //This is type aliasing
+function createUser({name,isPaid}:{name:string,isPaid:boolean}):{items:string}{  //This is type aliasing
     // {name:string,isPaid:boolean} this is used to pass and object to an function
     console.log(`${name} and ${isPaid}`)
     name="Yash"
     isPaid=false;
+
+    return {items:"return statement"}
 }
 createUser({name:"Yash",isPaid:true,}); 
 // here in this we cannot pass optional parameter, but by creating a new object we can pass optional parameter
@@ -17,6 +19,7 @@ function createCourese():{ name:string,price:number}{
      
     return {name:"NextJs",price:200}
 }
+createCourese();
 
 
 //Type aliasing
@@ -65,4 +68,12 @@ type cardDetail= cardNumber & cardDate &{
     cvv:number
 }
 
+
+
+function helloworld({cardnumber}:cardNumber):string{
+
+
+    return "return mass"
+}
+helloworld({cardnumber:"hekoigaa"})
 export{}
