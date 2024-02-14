@@ -8,10 +8,21 @@ function sum(num1, num2) {
 }
 const sum12 = sum(2, 4);
 console.log(sum12);
-function isLegal(person) {
-    if (person.age < 18) {
-        return false;
+// function isLegal(person:Person):boolean{
+//     if(person.age<18){
+//         return false;
+//     }
+//     return true;
+// }
+// console.log(isLegal({firstName:"Yash",lastName:"Patel",age:17,gender:"Male"}))
+class Employees {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    return true;
+    greet(phares) {
+        console.log("Hello " + this.firstName + " " + this.lastName + " " + phares);
+    }
 }
-console.log(isLegal({ firstName: "Yash", lastName: "Patel", age: 17, gender: "Male" }));
+const emp1 = new Employees("Yash", "Patel");
+emp1.greet("Kaise Hoo vadill");

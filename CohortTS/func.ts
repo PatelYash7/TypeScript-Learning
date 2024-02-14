@@ -12,14 +12,29 @@ console.log(sum12);
 interface Person{
     firstName:string;
     lastName:string;
-    age:number;
-    gender:string;
+    // age:number;
+    // gender:string;
+    greet(phares:string):void;
 }
 
-function isLegal(person:Person):boolean{
-    if(person.age<18){
-        return false;
+// function isLegal(person:Person):boolean{
+//     if(person.age<18){
+//         return false;
+//     }
+//     return true;
+// }
+// console.log(isLegal({firstName:"Yash",lastName:"Patel",age:17,gender:"Male"}))
+
+class Employees implements Person{
+    firstName: string;
+    lastName: string;
+    constructor(firstName:string,lastName:string){
+        this.firstName=firstName;
+        this.lastName=lastName;
     }
-    return true;
+    greet(phares: string): void {
+        console.log("Hello "+this.firstName+" "+this.lastName+" "+phares);
+    }
 }
-console.log(isLegal({firstName:"Yash",lastName:"Patel",age:17,gender:"Male"}))
+const emp1 = new Employees("Yash","Patel");
+emp1.greet("Kaise Hoo vadill")
